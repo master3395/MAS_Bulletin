@@ -1,0 +1,19 @@
+<div class="pageoverflow">
+  <h2>{$mas_bl_title|escape:'html'}</h2>
+  <p>{$mas_bl_hint|escape:'html'}</p>
+  {$mas_bl_form_start}
+  <fieldset>
+    <legend>{$mas_bl_legend_breaking|escape:'html'}</legend>
+    <p>{$mas_bl_cb_show_breaking}</p>
+    <p>{$mas_bl_cb_scroll_breaking}</p>
+    <p>{$mas_bl_breaking_area}</p>
+  </fieldset>
+  <fieldset>
+    <legend>{$mas_bl_legend_live|escape:'html'}</legend>
+    <p>{$mas_bl_cb_show_live}</p>
+    <p>{$mas_bl_cb_scroll_live}</p>
+    <p>{$mas_bl_live_area}</p>
+  </fieldset>
+  <p>{$mas_bl_submit}</p>
+  {$mas_bl_form_end}
+</div>
