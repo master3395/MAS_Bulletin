@@ -3,13 +3,13 @@ if (!function_exists('cmsms')) {
     exit;
 }
 
-require_once __DIR__ . '/lib/class.MasBreakingLiveTicker.php';
+require_once __DIR__ . '/lib/class.MasBulletinTicker.php';
 
-$breakingMerge = MasBreakingLiveTicker::normalizeMergeMode((string) $this->GetPreference('breaking_merge_mode', 'manual_only'));
-$liveMerge = MasBreakingLiveTicker::normalizeMergeMode((string) $this->GetPreference('live_merge_mode', 'manual_only'));
+$breakingMerge = MasBulletinTicker::normalizeMergeMode((string) $this->GetPreference('breaking_merge_mode', 'manual_only'));
+$liveMerge = MasBulletinTicker::normalizeMergeMode((string) $this->GetPreference('live_merge_mode', 'manual_only'));
 
-$breakingOrder = MasBreakingLiveTicker::parseIdOrder((string) $this->GetPreference('breaking_article_order', ''));
-$liveOrder = MasBreakingLiveTicker::parseIdOrder((string) $this->GetPreference('live_article_order', ''));
+$breakingOrder = MasBulletinTicker::parseIdOrder((string) $this->GetPreference('breaking_article_order', ''));
+$liveOrder = MasBulletinTicker::parseIdOrder((string) $this->GetPreference('live_article_order', ''));
 
 $breakingLinkNews = $this->GetPreference('breaking_link_news', '1') === '1';
 $breakingLinkExternal = $this->GetPreference('breaking_link_external', '0') === '1';
@@ -17,10 +17,10 @@ $liveLinkNews = $this->GetPreference('live_link_news', '1') === '1';
 $liveLinkExternal = $this->GetPreference('live_link_external', '0') === '1';
 
 $mergeItems = [
-    MasBreakingLiveTicker::MERGE_MANUAL_ONLY => $this->Lang('merge_manual_only'),
-    MasBreakingLiveTicker::MERGE_NEWS_ONLY => $this->Lang('merge_news_only'),
-    MasBreakingLiveTicker::MERGE_NEWS_FIRST => $this->Lang('merge_news_first'),
-    MasBreakingLiveTicker::MERGE_MANUAL_FIRST => $this->Lang('merge_manual_first'),
+    MasBulletinTicker::MERGE_MANUAL_ONLY => $this->Lang('merge_manual_only'),
+    MasBulletinTicker::MERGE_NEWS_ONLY => $this->Lang('merge_news_only'),
+    MasBulletinTicker::MERGE_NEWS_FIRST => $this->Lang('merge_news_first'),
+    MasBulletinTicker::MERGE_MANUAL_FIRST => $this->Lang('merge_manual_first'),
 ];
 
 $smarty->assign('mas_bl_news_form_start', $this->CreateFormStart($id, 'admin_save_news', $returnid));
@@ -36,8 +36,8 @@ $smarty->assign(
     $this->CreateInputDropdown($id, 'live_merge_mode', $mergeItems, -1, $liveMerge)
 );
 
-$smarty->assign('mas_bl_breaking_order_value', MasBreakingLiveTicker::idsToOrderString($breakingOrder));
-$smarty->assign('mas_bl_live_order_value', MasBreakingLiveTicker::idsToOrderString($liveOrder));
+$smarty->assign('mas_bl_breaking_order_value', MasBulletinTicker::idsToOrderString($breakingOrder));
+$smarty->assign('mas_bl_live_order_value', MasBulletinTicker::idsToOrderString($liveOrder));
 
 $titlesBreaking = [];
 foreach ($breakingOrder as $bid) {
@@ -73,7 +73,7 @@ $smarty->assign('mas_bl_live_rows', $liveOrder);
 $smarty->assign('mas_bl_breaking_titles', $titlesBreaking);
 $smarty->assign('mas_bl_live_titles', $titlesLive);
 
-$picker = MasBreakingLiveTicker::recentArticlesForPicker(80);
+$picker = MasBulletinTicker::recentArticlesForPicker(80);
 $smarty->assign('mas_bl_picker_articles', $picker);
 $smarty->assign('mas_bl_news_installed', $news ? 1 : 0);
 
@@ -105,11 +105,11 @@ $smarty->assign(
 
 $smarty->assign(
     'mas_bl_hidden_breaking_order',
-    $this->CreateInputHidden($id, 'breaking_article_order', MasBreakingLiveTicker::idsToOrderString($breakingOrder))
+    $this->CreateInputHidden($id, 'breaking_article_order', MasBulletinTicker::idsToOrderString($breakingOrder))
 );
 $smarty->assign(
     'mas_bl_hidden_live_order',
-    $this->CreateInputHidden($id, 'live_article_order', MasBreakingLiveTicker::idsToOrderString($liveOrder))
+    $this->CreateInputHidden($id, 'live_article_order', MasBulletinTicker::idsToOrderString($liveOrder))
 );
 
 $smarty->assign('mas_bl_breaking_ids_json', json_encode($breakingOrder, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));

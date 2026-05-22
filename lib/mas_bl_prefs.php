@@ -1,6 +1,6 @@
 <?php
 /**
- * MAS_BreakingLive preference helpers (empty DB values treated as defaults).
+ * MAS_Bulletin preference helpers (empty DB values treated as defaults).
  */
 if (!function_exists('cmsms')) {
     exit;

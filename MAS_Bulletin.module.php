@@ -1,19 +1,19 @@
 <?php
 /**
- * MAS Breaking + Live tickers for the homepage (admin-managed, optional marquee scroll).
+ * MAS Bulletin: homepage Breaking and Live tickers (admin-managed, optional marquee scroll).
  *
- * @package MAS_BreakingLive
+ * @package MAS_Bulletin
  * @author master3395
  */
 if (!defined('CMS_VERSION')) {
     exit;
 }
 
-class MAS_BreakingLive extends CMSModule
+class MAS_Bulletin extends CMSModule
 {
     public function GetName()
     {
-        return 'MAS_BreakingLive';
+        return 'MAS_Bulletin';
     }
 
     public function GetFriendlyName()
@@ -121,7 +121,7 @@ class MAS_BreakingLive extends CMSModule
 
     public function VisibleToAdminUser()
     {
-        return $this->CheckPermission('Manage MAS_BreakingLive')
+        return $this->CheckPermission('Manage MAS_Bulletin')
             || $this->CheckPermission('Modify Site Preferences')
             || $this->CheckPermission('Modify Modules');
     }

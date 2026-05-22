@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin form helpers for MAS_BreakingLive (checkbox save + display).
+ * Admin form helpers for MAS_Bulletin (checkbox save + display).
  */
 if (!function_exists('cmsms')) {
     exit;

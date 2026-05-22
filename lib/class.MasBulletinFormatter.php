@@ -8,9 +8,9 @@ if (!defined('CMS_VERSION')) {
     exit('Direct access not allowed');
 }
 
-require_once __DIR__ . '/class.MasBreakingLiveTicker.php';
+require_once __DIR__ . '/class.MasBulletinTicker.php';
 
-final class MasBreakingLiveFormatter
+final class MasBulletinFormatter
 {
     private const SEP_PLAIN = ' • ';
 
@@ -197,25 +197,25 @@ final class MasBreakingLiveFormatter
     private static function mergeParts(string $mergeMode, array $manualParts, array $newsParts, bool $hasManual): array
     {
         switch ($mergeMode) {
-            case MasBreakingLiveTicker::MERGE_NEWS_ONLY:
+            case MasBulletinTicker::MERGE_NEWS_ONLY:
                 if ($newsParts !== []) {
                     return $newsParts;
                 }
 
                 return $manualParts;
-            case MasBreakingLiveTicker::MERGE_NEWS_FIRST:
+            case MasBulletinTicker::MERGE_NEWS_FIRST:
                 if ($newsParts !== [] && $manualParts !== []) {
                     return array_merge($newsParts, $manualParts);
                 }
 
                 return $newsParts !== [] ? $newsParts : $manualParts;
-            case MasBreakingLiveTicker::MERGE_MANUAL_FIRST:
+            case MasBulletinTicker::MERGE_MANUAL_FIRST:
                 if ($manualParts !== [] && $newsParts !== []) {
                     return array_merge($manualParts, $newsParts);
                 }
 
                 return $manualParts !== [] ? $manualParts : $newsParts;
-            case MasBreakingLiveTicker::MERGE_MANUAL_ONLY:
+            case MasBulletinTicker::MERGE_MANUAL_ONLY:
             default:
                 return $manualParts;
         }

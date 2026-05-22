@@ -4,7 +4,7 @@
  */
 declare(strict_types=1);
 
-final class MasBreakingLiveTicker
+final class MasBulletinTicker
 {
     public const MERGE_MANUAL_ONLY = 'manual_only';
     public const MERGE_NEWS_ONLY = 'news_only';

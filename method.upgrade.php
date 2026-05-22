@@ -5,6 +5,14 @@ if (!function_exists('cmsms')) {
 
 $from = isset($oldversion) ? (string) $oldversion : '0';
 
+$migrateLib = cms_join_path(dirname(__FILE__), 'lib', 'mas_bulletin_migrate.php');
+if (is_file($migrateLib)) {
+    require_once $migrateLib;
+    if (function_exists('mas_bulletin_migrate_from_breaking_live')) {
+        mas_bulletin_migrate_from_breaking_live($this);
+    }
+}
+
 if (version_compare($from, '1.2.3', '<')) {
     foreach (['scroll_breaking', 'scroll_live'] as $pref) {
         if (trim((string) $this->GetPreference($pref, '')) === '') {
@@ -63,14 +71,14 @@ $modRoot = dirname(__FILE__);
 $permLib = cms_join_path($modRoot, 'lib', 'mas_bl_fs_normalize.php');
 if (is_file($permLib)) {
     require_once $permLib;
-    if (function_exists('mas_breakinglive_normalize_module_permissions')) {
-        mas_breakinglive_normalize_module_permissions($modRoot);
+    if (function_exists('mas_bulletin_normalize_module_permissions')) {
+        mas_bulletin_normalize_module_permissions($modRoot);
     }
-    if (function_exists('mas_breakinglive_ensure_public_asset_modes')) {
-        mas_breakinglive_ensure_public_asset_modes($modRoot);
+    if (function_exists('mas_bulletin_ensure_public_asset_modes')) {
+        mas_bulletin_ensure_public_asset_modes($modRoot);
     }
 }
 
 if (function_exists('audit')) {
-    audit(0, $this->GetName(), 'MAS_BreakingLive upgraded to ' . $this->GetVersion());
+    audit(0, $this->GetName(), 'MAS_Bulletin upgraded to ' . $this->GetVersion() . ' (renamed from MAS_BreakingLive)');
 }

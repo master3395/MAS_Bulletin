@@ -6,7 +6,7 @@ if (!function_exists('cmsms')) {
 require_once __DIR__ . '/lib/mas_bl_prefs.php';
 require_once __DIR__ . '/lib/mas_bl_admin_form.php';
 
-if (!$this->CheckPermission('Manage MAS_BreakingLive')) {
+if (!$this->CheckPermission('Manage MAS_Bulletin')) {
     return $this->DisplayErrorPage($id, $params, $returnid, $this->Lang('accessdenied'));
 }
 

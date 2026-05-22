@@ -1,4 +1,8 @@
-# MAS_BreakingLive changelog
+# MAS_Bulletin changelog
+
+## 1.4.0 (22.05.2026)
+
+- **Module renamed:** `MAS_BreakingLive` (16 characters) is now **`MAS_Bulletin`** (12 characters) for hosts with a 15-character module name limit. Plugin tag is `{MAS_Bulletin}`. Permission is **Manage MAS_Bulletin**. Install or upgrade runs `lib/mas_bulletin_migrate.php` to copy site preferences and group permissions from the legacy module name.
 
 ## 1.3.0 (20.05.2026)
 
@@ -40,7 +44,7 @@
 ## 1.2.0 (20.05.2026)
 
 - **Ticker links:** Settings and News sources tabs: enable/disable links to News article URLs and to `https://` URLs (or simple `<a href="https://...">` tags) in manual Breaking and Live lines.
-- Formatter: `lib/class.MasBreakingLiveFormatter.php` builds safe HTML for the frontend ticker.
+- Formatter: `lib/class.MasBulletinFormatter.php` builds safe HTML for the frontend ticker.
 
 ## 1.1.3 (20.05.2026)
 

@@ -3,7 +3,7 @@ if (!function_exists('cmsms')) {
     exit;
 }
 
-$this->RemovePermission('Manage MAS_BreakingLive');
+$this->RemovePermission('Manage MAS_Bulletin');
 
 $this->RemovePreference('show_breaking');
 $this->RemovePreference('show_live');

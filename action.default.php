@@ -5,8 +5,8 @@ if (!function_exists('cmsms')) {
 
 require_once __DIR__ . '/lib/mas_bl_prefs.php';
 require_once __DIR__ . '/lib/mas_bl_admin_form.php';
-require_once __DIR__ . '/lib/class.MasBreakingLiveTicker.php';
-require_once __DIR__ . '/lib/class.MasBreakingLiveFormatter.php';
+require_once __DIR__ . '/lib/class.MasBulletinTicker.php';
+require_once __DIR__ . '/lib/class.MasBulletinFormatter.php';
 
 $smarty = cmsms()->GetSmarty();
 
@@ -15,18 +15,18 @@ $showLive = mas_bl_pref_is_on($this, 'show_live');
 $scrollBreaking = mas_bl_pref_enabled($this, 'scroll_breaking', true);
 $scrollLive = mas_bl_pref_enabled($this, 'scroll_live', true);
 
-$breakingMerge = MasBreakingLiveTicker::normalizeMergeMode((string) $this->GetPreference('breaking_merge_mode', 'manual_only'));
-$liveMerge = MasBreakingLiveTicker::normalizeMergeMode((string) $this->GetPreference('live_merge_mode', 'manual_only'));
+$breakingMerge = MasBulletinTicker::normalizeMergeMode((string) $this->GetPreference('breaking_merge_mode', 'manual_only'));
+$liveMerge = MasBulletinTicker::normalizeMergeMode((string) $this->GetPreference('live_merge_mode', 'manual_only'));
 
-$breakingIds = MasBreakingLiveTicker::parseIdOrder((string) $this->GetPreference('breaking_article_order', ''));
-$liveIds = MasBreakingLiveTicker::parseIdOrder((string) $this->GetPreference('live_article_order', ''));
+$breakingIds = MasBulletinTicker::parseIdOrder((string) $this->GetPreference('breaking_article_order', ''));
+$liveIds = MasBulletinTicker::parseIdOrder((string) $this->GetPreference('live_article_order', ''));
 
 $breakingLinkNews = mas_bl_pref_enabled($this, 'breaking_link_news', true);
 $breakingLinkExternal = mas_bl_pref_enabled($this, 'breaking_link_external', false);
 $liveLinkNews = mas_bl_pref_enabled($this, 'live_link_news', true);
 $liveLinkExternal = mas_bl_pref_enabled($this, 'live_link_external', false);
 
-$breakingHtml = MasBreakingLiveFormatter::buildLineHtml(
+$breakingHtml = MasBulletinFormatter::buildLineHtml(
     $breakingMerge,
     mas_bl_pref_string(
         $this,
@@ -37,7 +37,7 @@ $breakingHtml = MasBreakingLiveFormatter::buildLineHtml(
     $breakingLinkNews,
     $breakingLinkExternal
 );
-$liveHtml = MasBreakingLiveFormatter::buildLineHtml(
+$liveHtml = MasBulletinFormatter::buildLineHtml(
     $liveMerge,
     mas_bl_pref_string(
         $this,
@@ -49,8 +49,8 @@ $liveHtml = MasBreakingLiveFormatter::buildLineHtml(
     $liveLinkExternal
 );
 
-$breaking = MasBreakingLiveFormatter::truncateHtml($breakingHtml, 4000);
-$live = MasBreakingLiveFormatter::truncateHtml($liveHtml, 4000);
+$breaking = MasBulletinFormatter::truncateHtml($breakingHtml, 4000);
+$live = MasBulletinFormatter::truncateHtml($liveHtml, 4000);
 
 $pauseMs = (int) $this->GetPreference('bxslider_pause_ms', '10000');
 if ($pauseMs < 2000) {

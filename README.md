@@ -1,29 +1,34 @@
-# MAS_BreakingLive
+# MAS_Bulletin
 
 CMS Made Simple module for homepage **Breaking** and **Live** ticker bars (admin-managed, optional marquee scroll, optional News integration).
+
+Renamed from **MAS_BreakingLive** (16 characters) to **MAS_Bulletin** (12 characters) for hosts with a 15-character module name limit.
 
 ## Requirements
 
 - CMS Made Simple 2.2.10 or newer
 - PHP 7.4 or newer
 - Optional: core **News** module for article-driven tickers
-- Optional: **MAS_Common** (shared Help/About UI and donations tab; install from the CMSMS Forge if you use other MAS modules)
+- Optional: **MAS_Common** (shared Help/About UI and donations tab)
 
 ## Install
 
-1. Copy this folder to `modules/MAS_BreakingLive/` in your CMSMS installation.
-2. In **Extensions → Module Manager**, install **MAS Breaking and Live**.
-3. Grant **Manage MAS_BreakingLive** to the appropriate admin group.
-4. Place `{MAS_BreakingLive}` early in your homepage template (for example MarqueePageHome) so bxSlider pause is applied before init.
+1. Copy this folder to `modules/MAS_Bulletin/` in your CMSMS installation, or install from **`dist/MAS_Bulletin-1.4.0.xml`** via Module Manager.
+2. In **Extensions → Module Manager**, install **MAS Bulletin**.
+3. Grant **Manage MAS_Bulletin** to the appropriate admin group.
+4. Place `{MAS_Bulletin}` early in your homepage template (for example MarqueePageHome).
 
-## Usage
+## Forge packages
 
-- **Extensions → MAS Breaking and Live**: Settings (manual lines, show/hide, scroll, timing), News sources (ordered articles, merge modes), Help, About, Changelog.
-- Frontend tag: `{MAS_BreakingLive}` outputs the red Breaking bar and blue Live bar and sets `window.__NT_BX_SLIDER_PAUSE_MS__` for the home news slider.
+Pre-built releases in **`dist/`**:
 
-## Forge
+- `MAS_Bulletin-1.4.0.xml` (CMSMS module export)
+- `MAS_Bulletin-1.4.0.zip`
+- `MAS_Bulletin-1.4.0.tar.gz`
 
-Published on the [CMS Made Simple Forge](https://dev.cmsmadesimple.org/) as **MAS_BreakingLive** (when released).
+## Migration from MAS_BreakingLive
+
+Install **MAS_Bulletin** on a site that had **MAS_BreakingLive**: `lib/mas_bulletin_migrate.php` copies site preferences and group permissions. Then uninstall the legacy module.
 
 ## Author
 

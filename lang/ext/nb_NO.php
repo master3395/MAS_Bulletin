@@ -13,13 +13,13 @@ if (!function_exists('cmsms')) {
     exit;
 }
 
-$lang['friendlyname'] = 'MAS Breaking og Live';
+$lang['friendlyname'] = 'MAS Bulletin';
 $lang['moddescription'] = 'Breaking- og live-ticker på forsiden, valgfrie nyhetstitler fra News-modulen, marquee-hastighet og pause for bxSlider på forsiden.';
-$lang['help'] = '<p>Plasser <code>{MAS_BreakingLive}</code> tidlig i forsidesmalen (for eksempel MarqueePageHome) slik at slider-timing brukes.</p><p>Åpne <strong>Utvidelser → MAS Breaking og Live</strong> for faner, nyhetsrekkefølge og visningstider.</p>';
+$lang['help'] = '<p>Plasser <code>{MAS_Bulletin}</code> tidlig i forsidesmalen (for eksempel MarqueePageHome) slik at slider-timing brukes.</p><p>Åpne <strong>Utvidelser → MAS Breaking og Live</strong> for faner, nyhetsrekkefølge og visningstider.</p>';
 $lang['changelog'] = 'Se CHANGELOG.md i modulmappen (full historikk).';
-$lang['postinstall'] = 'Gi gruppen som skal styre tickerne tilgangen «Administrer MAS_BreakingLive», og åpne deretter modulen for å sette tekster.';
-$lang['postuninstall'] = 'MAS_BreakingLive er avinstallert.';
-$lang['really_uninstall'] = 'Vil du fjerne MAS_BreakingLive og alle innstillingene?';
+$lang['postinstall'] = 'Gi gruppen som skal styre tickerne tilgangen «Administrer MAS_Bulletin», og åpne deretter modulen for å sette tekster.';
+$lang['postuninstall'] = 'MAS_Bulletin er avinstallert.';
+$lang['really_uninstall'] = 'Vil du fjerne MAS_Bulletin og alle innstillingene?';
 $lang['help_action'] = 'Reservert til senere bruk.';
 $lang['accessdenied'] = 'Ingen tilgang.';
 $lang['settings_title'] = 'Breaking- og Live-tickere';
@@ -52,7 +52,7 @@ $lang['merge_manual_first'] = 'Manuell tekst først, deretter nyhetstitler';
 $lang['news_intro'] = 'Velg publiserte nyheter fra News for hver linje. Rekkefølge settes med dra og slipp. Krever News-modulen. Hvis News mangler, brukes bare manuell tekst.';
 $lang['opt_pick_article'] = 'Velg en artikkel';
 $lang['btn_add_article'] = 'Legg til';
-$lang['help_tab_body'] = '<p><strong>Tagg:</strong> <code>{MAS_BreakingLive}</code> skriver ut breaking- og live-feltene og setter <code>window.__NT_BX_SLIDER_PAUSE_MS__</code> for bxSlider på forsiden.</p><p><strong>News:</strong> sammenslåingsmodus styrer hvordan manuell tekst kombineres med titler i valgt rekkefølge.</p><p><strong>Avinstallering:</strong> viser modulen «Kan ikke fjernes», kjør <strong>Utvidelser → oppgradering</strong> til minst <strong>1.1.1</strong> (normaliserer rettigheter), eller rett eierskap på <code>modules/MAS_BreakingLive</code> slik at PHP-brukeren eier filene, eller slett mappen over SSH.</p>';
+$lang['help_tab_body'] = '<p><strong>Tagg:</strong> <code>{MAS_Bulletin}</code> skriver ut breaking- og live-feltene og setter <code>window.__NT_BX_SLIDER_PAUSE_MS__</code> for bxSlider på forsiden.</p><p><strong>News:</strong> sammenslåingsmodus styrer hvordan manuell tekst kombineres med titler i valgt rekkefølge.</p><p><strong>Avinstallering:</strong> viser modulen «Kan ikke fjernes», kjør <strong>Utvidelser → oppgradering</strong> til minst <strong>1.1.1</strong> (normaliserer rettigheter), eller rett eierskap på <code>modules/MAS_Bulletin</code> slik at PHP-brukeren eier filene, eller slett mappen over SSH.</p>';
 $lang['help_tab_plain'] = 'Kort referanse for redaktører.';
 $lang['help_li_tag'] = 'Plasser taggen nær toppen av forsidesmalen slik at slideren leser pause før init.';
 $lang['help_li_news'] = 'Bruk fanen Nyheter for å legge til artikler og rekkefølge; titler vises i ticker når modus tillater det.';

@@ -7,7 +7,7 @@ if (!$this->VisibleToAdminUser()) {
     return $this->DisplayErrorPage($id, $params, $returnid, $this->Lang('accessdenied'));
 }
 
-if (isset($params['hidedonationssubmit']) && $this->CheckPermission('Manage MAS_BreakingLive')) {
+if (isset($params['hidedonationssubmit']) && $this->CheckPermission('Manage MAS_Bulletin')) {
     $this->SetPreference('hidedonationstab', $this->GetVersion());
 }
 
@@ -23,8 +23,8 @@ require_once __DIR__ . '/lib/mas_bl_fs_normalize.php';
 
 Mas_Admin_Ui::ensureIconGif($this);
 Mas_Admin_Ui::ensureBanner($this);
-if (function_exists('mas_breakinglive_ensure_public_asset_modes')) {
-    mas_breakinglive_ensure_public_asset_modes(__DIR__);
+if (function_exists('mas_bulletin_ensure_public_asset_modes')) {
+    mas_bulletin_ensure_public_asset_modes(__DIR__);
 }
 
 $smarty = cmsms()->GetSmarty();
@@ -36,7 +36,7 @@ $smarty->assign('mas_bl_changelog_html', $this->GetChangeLog());
 $activetab = isset($params['activetab']) ? (string) $params['activetab'] : 'settings';
 
 echo $this->StartTabHeaders();
-if ($this->CheckPermission('Manage MAS_BreakingLive')) {
+if ($this->CheckPermission('Manage MAS_Bulletin')) {
     echo $this->SetTabHeader('settings', $this->Lang('tab_settings'), $activetab === 'settings');
     echo $this->SetTabHeader('news', $this->Lang('tab_news'), $activetab === 'news');
 }
@@ -50,7 +50,7 @@ echo $this->EndTabHeaders();
 
 echo $this->StartTabContent();
 
-if ($this->CheckPermission('Manage MAS_BreakingLive')) {
+if ($this->CheckPermission('Manage MAS_Bulletin')) {
     echo $this->StartTab('settings', $params);
     include __DIR__ . '/function.admin_settings.php';
     echo $this->EndTab();

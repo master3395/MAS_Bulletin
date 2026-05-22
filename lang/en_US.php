@@ -13,13 +13,13 @@ if (!function_exists('cmsms')) {
     exit;
 }
 
-$lang['friendlyname'] = 'MAS Breaking and Live';
+$lang['friendlyname'] = 'MAS Bulletin';
 $lang['moddescription'] = 'Homepage breaking and live ticker lines, optional News-driven headlines, marquee speed, and home bxSlider pause.';
-$lang['help'] = '<p>Place <code>{MAS_BreakingLive}</code> early in your homepage layout (for example MarqueePageHome) so slider timing is applied.</p><p>Open <strong>Extensions → MAS Breaking and Live</strong> for tabs, News order, and display timing.</p>';
+$lang['help'] = '<p>Place <code>{MAS_Bulletin}</code> early in your homepage layout (for example MarqueePageHome) so slider timing is applied.</p><p>Open <strong>Extensions → MAS Bulletin</strong> for tabs, News order, and display timing.</p>';
 $lang['changelog'] = 'See CHANGELOG.md in the module directory (full history).';
-$lang['postinstall'] = 'Grant the permission Manage MAS_BreakingLive to the appropriate admin group, then open the module to configure tickers.';
-$lang['postuninstall'] = 'MAS_BreakingLive has been removed.';
-$lang['really_uninstall'] = 'Remove MAS_BreakingLive and its preferences?';
+$lang['postinstall'] = 'Grant the permission Manage MAS_Bulletin to the appropriate admin group, then open the module to configure tickers.';
+$lang['postuninstall'] = 'MAS_Bulletin has been removed.';
+$lang['really_uninstall'] = 'Remove MAS_Bulletin and its preferences?';
 $lang['help_action'] = 'Reserved for future use.';
 $lang['accessdenied'] = 'Access denied.';
 $lang['settings_title'] = 'Breaking and Live tickers';
@@ -59,7 +59,7 @@ $lang['merge_manual_first'] = 'Manual text first, then news titles';
 $lang['news_intro'] = 'Pick published News articles for each line. Order is drag and drop. Requires the News module. If News is missing, only manual text is used.';
 $lang['opt_pick_article'] = 'Pick an article';
 $lang['btn_add_article'] = 'Add';
-$lang['help_tab_body'] = '<p><strong>Tag:</strong> <code>{MAS_BreakingLive}</code> outputs the breaking and live bars and sets <code>window.__NT_BX_SLIDER_PAUSE_MS__</code> for the home bxSlider.</p><p><strong>News:</strong> merge modes control how manual lines combine with ordered article titles.</p><p><strong>Uninstall:</strong> if the module shows “Cannot Remove”, run <strong>Extensions → upgrade</strong> to at least <strong>1.1.1</strong> (normalizes modes), or fix ownership on <code>modules/MAS_BreakingLive</code> so the PHP user matches the file owner, or remove the folder over SSH.</p>';
+$lang['help_tab_body'] = '<p><strong>Tag:</strong> <code>{MAS_Bulletin}</code> outputs the breaking and live bars and sets <code>window.__NT_BX_SLIDER_PAUSE_MS__</code> for the home bxSlider.</p><p><strong>News:</strong> merge modes control how manual lines combine with ordered article titles.</p><p><strong>Uninstall:</strong> if the module shows “Cannot Remove”, run <strong>Extensions → upgrade</strong> to at least <strong>1.1.1</strong> (normalizes modes), or fix ownership on <code>modules/MAS_Bulletin</code> so the PHP user matches the file owner, or remove the folder over SSH.</p>';
 $lang['help_tab_plain'] = 'Short reference for editors.';
 $lang['help_li_tag'] = 'Place the tag near the top of the home template so the slider reads pause before init.';
 $lang['help_li_news'] = 'Use the News tab to add articles and order them; titles appear in the ticker when merge mode allows.';

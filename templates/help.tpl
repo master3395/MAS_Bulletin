@@ -1,5 +1,5 @@
 <div class="mas-bl-help-popup">
-  <h3>MAS Breaking and Live</h3>
+  <h3>MAS Bulletin</h3>
   <p>{$mod->Lang('help_tab_plain')|escape:'html'}</p>
   <ul>
     <li>{$mod->Lang('help_li_tag')|escape:'html'}</li>

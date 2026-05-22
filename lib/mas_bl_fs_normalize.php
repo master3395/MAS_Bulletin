@@ -6,7 +6,7 @@
  * @param string $root Absolute or relative module root directory
  * @return void
  */
-function mas_breakinglive_normalize_module_permissions($root)
+function mas_bulletin_normalize_module_permissions($root)
 {
     if (!is_string($root) || $root === '') {
         return;
@@ -67,7 +67,7 @@ function mas_breakinglive_normalize_module_permissions($root)
  * @param string $root Module root
  * @return void
  */
-function mas_breakinglive_ensure_public_asset_modes($root)
+function mas_bulletin_ensure_public_asset_modes($root)
 {
     if (!is_string($root) || $root === '') {
         return;

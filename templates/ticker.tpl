@@ -42,5 +42,5 @@
 </div>
 {/if}
 {if ($mas_bl_scroll_breaking && $mas_bl_breaking|default:'' != '') || ($mas_bl_scroll_live && $mas_bl_live|default:'' != '')}
-<script src="{root_url}/modules/MAS_BreakingLive/lib/mas_bl_marquee.js?v=20260525" defer></script>
+<script src="{root_url}/modules/MAS_Bulletin/lib/mas_bl_marquee.js?v=20260525" defer></script>
 {/if}
